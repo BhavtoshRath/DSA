@@ -28,21 +28,34 @@ class Array(object):
 
     def insert(self, item, position): # Insert can be either at a position or at the end
         if position == 0:
-            return [item].append(self.arrayItems)
+            self.arrayItems = [item] + self.arrayItems[1:]
         elif position == len(self.arrayItems) - 1:
-            return self.arrayItems.append([item])
+            self.arrayItems = self.arrayItems[:-1] + [item]
         elif position >= len(self.arrayItems):
             return IndexError('position out of bound!')
         else:
             arr_left = self.arrayItems[:position]
-            arr_right = self.arrayItems[position:]
-            temp1 = arr_left.append([item])
-            self.arrayItems = temp1.append(arr_right)
-            return self.arrayItems
+            arr_right = self.arrayItems[position+1:]
+            arr_left.append(item)
+            self.arrayItems = arr_left + arr_right
+
+    def delete(self, item):  # Assuming single occurrence. and replace deleted item with 0.
+        flag = 0
+        for i in self.arrayItems:
+            if self.arrayItems[i] == item:
+                flag = 1
+                self.arrayItems[i] = 0
+        if flag == 0:
+            print('Item not in array')
 
 
-
-
-a = Array(10, str)
-x = a[4]
-print('x')
+if __name__ == '__main__':
+    a = Array(10, int)
+    a.insert(9, 9)
+    a.insert(0, 0)
+    a.insert(4, 4)
+    a.insert(7, 7)
+    a.delete(4)
+    print(a)
+    a.delete(7)
+    print(a)

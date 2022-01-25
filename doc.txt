@@ -13,3 +13,9 @@ Trie
 
 Time complexity:
 https://www.bigocheatsheet.com/
+
+
+What does the if __name__ == “__main__”: do?
+__name__ is a special/global variable. When we execute python script_name.py where script_name.py is the main program of
+the module, then  __name__ is set to '__main__'. If this file is being imported from another module, __name__ will be
+set to the module’s name.
