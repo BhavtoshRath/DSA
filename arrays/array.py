@@ -1,26 +1,35 @@
 import ctypes
 
+
 class Array(object):
-    def __init__(self):
-        self.item_count = 0
-        self.array_capacity = 1
-        self.primary_array = self._create_array(self.array_capacity)
 
-    def _create_array(self, array_capacity):
-        return (array_capacity * ctypes.py_object)()
+    def __init__(self, sizeOfArray, arrayType = int):
+        self.sizeOfArray = len(list(map(arrayType, range(sizeOfArray))))
+        self.arrayItems = [arrayType(0)] * sizeOfArray
+        self.arrayType = arrayType
 
-    def list(self):
-        for items in self.primary_array:
-            return " ".join(str(self.primary_array[x]) for x in range(self.item_count))
+    def __str__(self):  # https://stackoverflow.com/questions/41168899/does-python-str-function-call-str-function-of-a-class
+        return "".join(str(i) for i in self.arrayItems)
 
     def __len__(self):
-        return self.item_count
+        return len(self.arrayItems)
 
-    def __getitem__(self, item_index):
-        if not 0 <= item_index < self.item_count:
-            return IndexError('Index out of range!')
-        return self.primary_array[item_index]
+    def __setitem__(self, index, item):
+        self.arrayItems[index] = item
+
+    def __getitem__(self, index):
+        return self.arrayItems[index]
+
+    def search(self, item):
+        for i in self.arrayItems:
+            if i == item:
+                return True
+        return False
+
+    def insert(self, item, position): # Insert can be either at a position or at the end
 
 
-x = Array()
+
+a = Array(10, str)
+x = a[4]
 print('x')
