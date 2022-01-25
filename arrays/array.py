@@ -27,6 +27,19 @@ class Array(object):
         return False
 
     def insert(self, item, position): # Insert can be either at a position or at the end
+        if position == 0:
+            return [item].append(self.arrayItems)
+        elif position == len(self.arrayItems) - 1:
+            return self.arrayItems.append([item])
+        elif position >= len(self.arrayItems):
+            return IndexError('position out of bound!')
+        else:
+            arr_left = self.arrayItems[:position]
+            arr_right = self.arrayItems[position:]
+            temp1 = arr_left.append([item])
+            self.arrayItems = temp1.append(arr_right)
+            return self.arrayItems
+
 
 
 
