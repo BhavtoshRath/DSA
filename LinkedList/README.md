@@ -1,0 +1,1 @@
+Single (1 pointer) vs double (2 pointers) linked list
