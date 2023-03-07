@@ -1,17 +1,41 @@
-from typing import List
 
 
-def twoSum(nums: List[int], target: int) -> List[int]:
+def twoNumberSum1(array, targetSum):
     l = []
-    for i in range(len(nums)):
-        for j in range(i+1, len(nums)):
-            if nums[i] + nums[j] == target:
+    for i in range(len(array)):
+        for j in range(i+1, len(array)):
+            if array[i] + array[j] == targetSum:
                 l.append(i)
                 l.append(j)
     return l
 
 
-ans = twoSum([2,7,11,15], 9)
-ans = twoSum([3,2,4], 6)
-ans = twoSum([3,3], 6)
-print(ans)
+def twoNumberSum2(array, targetSum):
+    d = {}
+    for index, value in enumerate(array):
+        d[value] = index
+        key_set = set(d.keys())
+        if targetSum-value in key_set and targetSum != 2*value:
+            return [value, targetSum-value]
+    else:
+        return []
+
+
+def twoNumberSum3(array, targetSum):
+    sorted_array = sorted(array)
+    left_ptr = 0
+    right_ptr = len(sorted_array) - 1
+    while left_ptr < right_ptr:
+        if sorted_array[left_ptr] + sorted_array[right_ptr] == targetSum:
+            return [sorted_array[left_ptr], sorted_array[right_ptr]]
+        if sorted_array[left_ptr] + sorted_array[right_ptr] < targetSum:
+            left_ptr += 1
+        elif sorted_array[left_ptr] + sorted_array[right_ptr] > targetSum:
+            right_ptr -= 1
+    return []
+
+
+array = [-7, -5, -3, -1, 0, 1, 3, 5, 7]
+targetSum = -5
+x = twoNumberSum3(array, targetSum)
+print(x)
