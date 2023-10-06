@@ -4,16 +4,18 @@ class Tree:
         self.left = None
         self.right = None
 
+
 def findClosestValueInBst(tree: Tree, target: int):
     return helper(tree, target, float("inf"))
 
-def helper(tree, target,closest):
+
+def helper(tree, target, closest):
     if tree is None:
         return closest
     if abs(target - closest) > abs(target - tree.value):
         closest = tree.value
     if target < tree.value:
-        return helper(tree.left, target,closest)
+        return helper(tree.left, target, closest)
     if target > tree.value:
         return helper(tree.right, target, closest)
     else:
