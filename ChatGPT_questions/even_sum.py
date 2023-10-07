@@ -1,4 +1,5 @@
-# Write a Python function that takes an array of numbers as input and returns the sum of all the even numbers in the array.
+# Write a Python function that takes an array of numbers as input
+# and returns the sum of all the even numbers in the array.
 
 
 def sum_even_numbers(array):
