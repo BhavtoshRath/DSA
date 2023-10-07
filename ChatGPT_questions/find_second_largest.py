@@ -2,12 +2,36 @@
 # returns the second largest element in the array.
 # If there is no second largest element, return None.
 
+from icecream import ic
+
+# def find_second_largest(input_array):
+#     seq = sorted(list(set(input_array))[-2:])
+#     if len(seq) != 2:
+#         return None
+#     else:
+#         return seq[0]
+
+
 def find_second_largest(input_array):
-    seq = sorted(list(set(input_array))[-2:])
-    if len(seq) != 2:
+    if len(input_array) < 2:
         return None
-    else:
-        return seq[0]
+    largest = float("-inf")
+    second_largest = float("-inf")
+    for num in input_array:
+        ic(num)
+        if num > largest and num > second_largest:
+            second_largest = largest
+            largest = num
+            ic(second_largest, largest)
+        elif num < largest and num > second_largest:
+            second_largest = num
+
+    if second_largest == float("-inf"):
+        return None
+
+    return second_largest
+
+
 
 
 # Test cases
