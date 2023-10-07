@@ -9,17 +9,30 @@ def findClosestValueInBst(tree: Tree, target: int):
     return helper(tree, target, float("inf"))
 
 
+# def helper(tree, target, closest):  # Recursion
+#     if tree is None:
+#         return closest
+#     if abs(target - closest) > abs(target - tree.value):
+#         closest = tree.value
+#     if target < tree.value:
+#         return helper(tree.left, target, closest)
+#     if target > tree.value:
+#         return helper(tree.right, target, closest)
+#     else:
+#         return closest
+
 def helper(tree, target, closest):
-    if tree is None:
-        return closest
-    if abs(target - closest) > abs(target - tree.value):
-        closest = tree.value
-    if target < tree.value:
-        return helper(tree.left, target, closest)
-    if target > tree.value:
-        return helper(tree.right, target, closest)
-    else:
-        return closest
+    currentNode = tree
+    while currentNode is not None:
+        if abs(target - closest) > abs(target - currentNode.value):
+            closest = currentNode.value
+        if target < currentNode.value:
+            currentNode = currentNode.left
+        elif target > currentNode.value:
+            currentNode = currentNode.right
+        else:
+            break
+    return closest
 
 
 # Creating a Tree with seven inputs
