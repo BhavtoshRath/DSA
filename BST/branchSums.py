@@ -13,15 +13,15 @@ def branchSums(root):
 
 
 def helper(node, runningSum, sum_l):
-    if node is None:
+    if node is None: # To handle condition where node.left/node.right in line 23/24 are None
         return None
     runningSum += node.value
     if node.left is None and node.right is None:
+        # stopping condition, when you are certain that sum for 1 branch is complete
         sum_l.append(runningSum)
 
-    helper(node.left, runningSum, sum_l)
-    helper(node.right, runningSum, sum_l)
-
+    helper(node.left, runningSum, sum_l)  # Rec
+    helper(node.right, runningSum, sum_l)  # Rec
 
 
 root = BinaryTree(1)
