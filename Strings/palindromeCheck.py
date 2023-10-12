@@ -29,7 +29,9 @@ def isPalindrome2(string):
 # print(isPalindrome2("abcba"))
 
 
-# Iterate using pointers
+# Iterate using pointers (Best space -time  complexity!)
+# Space: O(1) | Time: O(N)
+
 def isPalindrome3(string):
     left_ptr = 0
     right_ptr = len(string) - 1
