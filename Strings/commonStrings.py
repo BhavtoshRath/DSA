@@ -29,6 +29,28 @@ def commonCharacters2(strings):
 
 
 strings = ["abc", "bcd", "cbaccd"]
-print(commonCharacters2(strings))
+# print(commonCharacters2(strings))
+
+def commonCharacters3(strings):
+    set_strings = [set(string) for string in strings]
+    smallest_string = list(min(set_strings, key=len))
+    print(smallest_string)
+    for char in smallest_string:
+        for set_string in set_strings:
+            if char not in set_string:
+                if char in smallest_string:
+                    smallest_string.remove(char)
+    return smallest_string
+
+
+strings = ["abc", "bcd", "cbad"]
+strings = ["ab&cdef!", "f!ed&cba", "a&bce!d", "ae&fb!cd", "efa&!dbc", "eff!&fff&fffffffbcda", "eeee!efff&fffbbbbbaaaaaccccdddd", "*******!***&****abdcef************", "*******!***&****a***********f*", "*******!***&****b***********c*"]
+print(commonCharacters3(strings))
+
+# ['f', '*', '!', 'a', '&']
+# ['*', '!', '&']
+
+# ['a', '!', '*', '&', 'f']
+# ['!', '&']
 
 
