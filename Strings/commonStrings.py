@@ -33,24 +33,20 @@ strings = ["abc", "bcd", "cbaccd"]
 
 def commonCharacters3(strings):
     set_strings = [set(string) for string in strings]
-    smallest_string = list(min(set_strings, key=len))
-    print(smallest_string)
-    for char in smallest_string:
+    smallest_string_len = len(list(min(set_strings, key=len)))
+    smallest_strings = [x for x in set_strings if len(x) == smallest_string_len]
+    smallest_char_set = list(set.intersection(*smallest_strings))
+    for char in smallest_char_set:
         for set_string in set_strings:
             if char not in set_string:
-                if char in smallest_string:
-                    smallest_string.remove(char)
-    return smallest_string
+                if char in smallest_char_set:
+                    smallest_char_set.remove(char)
+    return smallest_char_set
 
 
 strings = ["abc", "bcd", "cbad"]
 strings = ["ab&cdef!", "f!ed&cba", "a&bce!d", "ae&fb!cd", "efa&!dbc", "eff!&fff&fffffffbcda", "eeee!efff&fffbbbbbaaaaaccccdddd", "*******!***&****abdcef************", "*******!***&****a***********f*", "*******!***&****b***********c*"]
 print(commonCharacters3(strings))
 
-# ['f', '*', '!', 'a', '&']
-# ['*', '!', '&']
-
-# ['a', '!', '*', '&', 'f']
-# ['!', '&']
 
 
