@@ -44,7 +44,7 @@ def commonCharacters3(strings):
     return smallest_char_set
 
 
-strings = ["abc", "bcd", "cbad"]
+# strings = ["abc", "bcd", "cbad"]
 strings = ["ab&cdef!", "f!ed&cba", "a&bce!d", "ae&fb!cd", "efa&!dbc", "eff!&fff&fffffffbcda", "eeee!efff&fffbbbbbaaaaaccccdddd", "*******!***&****abdcef************", "*******!***&****a***********f*", "*******!***&****b***********c*"]
 print(commonCharacters3(strings))
 
