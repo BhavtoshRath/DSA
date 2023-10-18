@@ -11,21 +11,18 @@ def getNthFib1(n):
 # print(getNthFib1(10))
 
 
-# Using memoization
+# Using memoization (used to optimize recursive algorithms by storing the results
+# of expensive function calls and reusing them when the same inputs occur again)
 # Time: O(n)
-memoize = []
-memoize.append(0)
-memoize.append(1)
+fib_cache = {}
+fib_cache[1] = 0
+fib_cache[2] = 1
 def getNthFib2(n):
-    if n == 1:
-        return 0
-    if n == 2:
-        return 1
-    if len(memoize) <= n:
-        return memoize[n]
+    if n in fib_cache:
+        return fib_cache[n]
     else:
-        memoize[n] = getNthFib2(n - 1) + getNthFib2(n - 2)
-        return memoize[n]
+        fib_cache[n] = getNthFib2(n - 1) + getNthFib2(n - 2)
+        return fib_cache[n]
 
 
-print(getNthFib2(5))
+print(getNthFib2(21))
