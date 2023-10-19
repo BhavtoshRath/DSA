@@ -35,3 +35,8 @@ def count_even_digits2(n):
 
 print(count_even_digits2(349885))
 
+def tmp():
+    return True + True + False
+
+print(tmp())
+

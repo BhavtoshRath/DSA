@@ -12,4 +12,6 @@ def find_max_digit(n):
     else:
         return max(last_digit, find_max_digit(remaining_digits))
 
-print(find_max_digit(814273))
+# print(find_max_digit(814273))
+
+
