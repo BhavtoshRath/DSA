@@ -16,7 +16,7 @@ def count_even_digits1(n):
 
 # print(count_even_digits1(3478568887))
 
-# Can recursion have a while loop?
+# Doubt: Can recursion have a while loop?
 # Base case: single digit
 cntr = 0
 def count_even_digits2(n):
