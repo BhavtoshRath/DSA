@@ -8,4 +8,5 @@ def reverseWords(str):
     res = " ".join(reversed(splt_str))
     return res
 
+
 print(reverseWords("Hello world"))
