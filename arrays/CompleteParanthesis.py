@@ -11,6 +11,9 @@
 # Input: s = "(]"
 # Output: false
 
+# Time and space complexity: O(N)
+
+
 def CompleteParanthesis(s):
     stack = []
     d = {')': '(', ']': '[', '}': '{'}

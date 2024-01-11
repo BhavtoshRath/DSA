@@ -37,7 +37,15 @@ def twoNumberSum3(array, targetSum):  # Approach 3: Sort, and then using pointer
     return []
 
 
-array = [-7, -5, -3, -1, 0, 1, 3, 5, 7]
-targetSum = -5
-x = twoNumberSum3(array, targetSum)
+def twoSum(nums, target): # (In leetcode grind75)
+    d = {}
+    for index in range(len(nums)):
+        if nums[index] not in d:
+            d[nums[index]] = index
+        if (target - nums[index]) in d:
+            if index != nums.index(target - nums[index]):
+                return [index, nums.index(target - nums[index])]
+array = [3,2,4]
+targetSum = 6
+x = twoSum(array, targetSum)
 print(x)
