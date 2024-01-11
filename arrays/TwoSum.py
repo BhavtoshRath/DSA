@@ -23,7 +23,7 @@ def twoNumberSum2(array, targetSum):  # Approach 2: Hash map/dict (O(N))
         return []
 
 
-def twoNumberSum3(array, targetSum):  # Approach 3: Using pointers (O(N))
+def twoNumberSum3(array, targetSum):  # Approach 3: Sort, and then using pointers (O(N))
     sorted_array = sorted(array)
     left_ptr = 0
     right_ptr = len(sorted_array) - 1
