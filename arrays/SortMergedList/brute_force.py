@@ -30,4 +30,7 @@ for i in range(len(final_list)):
     result.next = Node(final_list[i])
     result = result.next
 
+dummy = Node(1)
+tail = dummy
+
 print('x')
