@@ -2,7 +2,7 @@
 # Write a recursive function count_even_digits(n) that counts the number of even digits in a positive integer n.
 
 
-# HINT: [An imp concept] If need to separate out digits in number, use (% 10), (// 10)
+# HINT: [An imp concept] If need to separate out digits in number, use (% 10) - remainder, (// 10) - divisor
 # A non-recursive solution
 def count_even_digits1(n):
     cntr = 0
@@ -36,7 +36,7 @@ def count_even_digits2(n):
 print(count_even_digits2(349885))
 
 def tmp():
-    return True + True + False
+    return True + True + 1 + False
 
 print(tmp())
 

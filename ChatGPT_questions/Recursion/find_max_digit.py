@@ -7,11 +7,13 @@
 def find_max_digit(n):
     last_digit = n % 10
     remaining_digits = n // 10
-    if remaining_digits == 0:
+    # if remaining_digits == 0:
+    #     return last_digit
+    if n < 10:
         return last_digit
     else:
         return max(last_digit, find_max_digit(remaining_digits))
 
-# print(find_max_digit(814273))
+print(find_max_digit(814273))
 
 
