@@ -21,9 +21,18 @@ def rand_k(k):
         else:
             return result
     else:
-        return result % k
+        temp1 = 1
+        temp2 = 0
+        while temp1 < k:
+            temp2 += rand_n() * N
+            temp1 *= N
+        return temp2
+        # return result + result % k
 
 
 print(rand_k(4))
 print(rand_k(5))
-print(rand_k(7))
+print(rand_k(1000))
+# for i in range(0, 1000):
+#     print(i, rand_k(1000))
+#     i += 1
