@@ -1,5 +1,7 @@
-class MyQueue:
+# https://leetcode.com/problems/implement-queue-using-stacks/
+# Implement using 2 lists: enqueue and dequeue
 
+class MyQueue:
     def __init__(self):
         self.enqueue_list = []
         self.dequeue_list = []
