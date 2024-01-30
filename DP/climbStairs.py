@@ -25,3 +25,21 @@ def climb_stairs(n):
 # N = 6
 
 climb_stairs(5)
+
+
+# Without memoization. Space: O(1),  Time: O(2^N)-> Binary tree of recursive calls
+def climbingStairs(n):
+    if n <= 2:
+        return n
+    else:
+        return climbingStairs(n-1) + climbingStairs(n-2)
+
+
+# With memoization: Space: O(N), Time: O(N)
+def climbingStairs(n, memo={}):
+    if n <= 2:
+        return n
+    if n not in memo:
+        memo[n] = climbingStairs(n-1) + climbingStairs(n-2)
+    else:
+        return memo[n]
