@@ -21,4 +21,5 @@ def canConstruct(ransomNote, magazine):  # Use Hash map
     else:
         return True
 
+
 print(canConstruct("aa", "aab"))
