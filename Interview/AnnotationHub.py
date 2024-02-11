@@ -20,9 +20,8 @@ def binary_search(mat):  # shape: m*n
     n_row = len(mat)
     for m in range(0, n_row):  # [0,1,2,....n_row-1]
         row = mat[m]
-        x
         left_ptr = 0
-        right_ptr = n - 1
+        right_ptr = n_row - 1
         while left_ptr < right_ptr:
             mid = (left_ptr + right_ptr) // 2
             if row[mid] == 1:
@@ -30,9 +29,9 @@ def binary_search(mat):  # shape: m*n
             else:
                 left_ptr = mid + 1
 
-        result.append(left)
+        result.append(left_ptr)
 
-    return max(result)  # timecomplexity: m*log(n) + m
+    return (result.index(max(result)))  # timecomplexity: m*log(n) + m
 
 
 
