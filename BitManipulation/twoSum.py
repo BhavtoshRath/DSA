@@ -3,7 +3,7 @@
 
 def getSum(a: int, b: int) -> int:
     while b != 0:
-        carry = (a & b) << 1
+        carry = (a & b) << 1 # & is "bitwise AND operator". convert a and b to binary and multiply
         a = a ^ b
         b = carry
     return a
