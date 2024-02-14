@@ -35,5 +35,22 @@ def addBinary(a: str, b: str) -> str:
     return ''.join(result[::-1])
 
 
-addBinary("1101", "101")
+def addBinary1(a, b):
+    result = []
+    carry = 0
+    i, j = len(a) - 1, len(b) - 1
+    while i >=0 or j >= 0:
+        dig_a = int(a[i]) if i >=0 else 0
+        dig_b = int(b[j]) if j >=0 else 0
+        current_sum = dig_a + dig_b + carry  # imp
+        carry = current_sum // 2
+        result.append(str(current_sum%2))
+        i -=1
+        j -=1
+    if carry == 1:
+        result.append(str(carry))
+    return "".join(result[::-1])
+
+
+print(addBinary1("1101", "101"))
 
