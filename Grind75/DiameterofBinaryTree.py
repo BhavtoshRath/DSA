@@ -10,7 +10,7 @@ class TreeNode:
 def diameter_of_binary_tree(root):
     def dfs(node):
         if not node:
-            return 0, 0  # depth, diameter
+            return 0, 0  # (depth, diameter)
 
         left_depth, left_diameter = dfs(node.left)
         right_depth, right_diameter = dfs(node.right)
