@@ -6,7 +6,7 @@ class ListNode:
         self.next = next
 
 
-def MiddleNode(head):
+def find_middle(head):
     if not head:
         return None
     slow = head
