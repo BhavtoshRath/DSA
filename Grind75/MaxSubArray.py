@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/maximum-subarray/description/
 # for similar problems: https://zerobone.net/blog/cs/kadane-algorithm/
-def max_subarray(nums):
+
+def max_subarray(nums):  # O(N)
     max_sum = nums[0]
     curr_sum = nums[0]
     for num in nums[1:]:
