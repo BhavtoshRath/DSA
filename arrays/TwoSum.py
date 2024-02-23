@@ -17,7 +17,7 @@ def twoNumberSum2(array, targetSum):  # Approach 2: Hash map/dict (O(N))
     for index, value in enumerate(array):
         d[value] = index
         key_set = set(d.keys())
-        if targetSum - value in key_set and targetSum != 2 * value:
+        if targetSum - value in key_set and targetSum != 2 * value: 
             return [value, targetSum - value]
     else:
         return []
@@ -58,11 +58,13 @@ def twoSum2(nums, target):  # soln: returning the numbers
 def twoSum3(nums, target):
     d = {}
     for i in range(len(nums)):
-        d[nums[i]] = i
-        val = list(d.keys())
+        d[i] = nums[i]
+        val = list(d.values())
         if target - nums[i] in val:
-            return [d[nums[i]], d[target - nums[i]]]
-array = [2,7,11,15]
-targetSum = 9
+            return [i, nums.index(target - nums[i])]
+
+
+array = [3,3]
+targetSum = 6
 x = twoSum3(array, targetSum)
 print(x)
