@@ -1,8 +1,10 @@
 # https://leetcode.com/problems/3sum/description/
 # https://www.youtube.com/watch?v=jzZsG8n2R9A&ab_channel=NeetCode
 
+# Lines 20-22 are difficult to understand but imp
 
-def threeSum(nums):
+
+def threeSum(nums):   # Find trip
     nums.sort()  # O(NlogN)
     result = []
 
@@ -23,4 +25,7 @@ def threeSum(nums):
     return result
 
 
-# Lines 20-22 are difficult to understand
+
+
+nums = [-1, 0, 1, 2, -1, -4]
+print(threeSum(nums))  # Output: [[-1, -1, 2], [-1, 0, 1]]
