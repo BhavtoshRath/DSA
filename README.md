@@ -7,7 +7,7 @@
 
 Concepts:
 
-Sliding window
- * Stock price *
- * Maximum sub array *
- * Longest Substring Without Repeating Characters *
+Sliding window: Mostly O(N)
+ * Stock price (max_profit, min_price)
+ * Maximum sub array (max_sum, current_sum)
+ * Longest Substring Without Repeating Characters (l_pttr, r_ptr, seen_set)
