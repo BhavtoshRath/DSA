@@ -7,7 +7,9 @@
 
 # Concepts:
 
-Sliding window: Mostly O(N); Questions with smallest/largest subarray
+### Sliding window: 
+Mostly O(N) <br>
+Questions with smallest/largest subarray
  * Stock price (max_profit, min_price)
  * Maximum sub array (max_sum, current_sum)
  * Longest Substring Without Repeating Characters (l_pttr, r_ptr, seen_set)
